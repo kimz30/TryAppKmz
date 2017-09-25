@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXHamburger?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #373737;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kmztaskapp.taskappkmz.ViewTaskController">
+    <children>
+        <ListView fx:id="tasks_listview" fixedCellSize="30.0" layoutX="127.0" layoutY="27.0" onMouseClicked="#pressListViewAction" onMouseDragged="#pressListViewAction" prefHeight="318.0" prefWidth="454.0" />
+        <Button layoutX="137.0" layoutY="361.0" mnemonicParsing="false" onAction="#displayNotes" prefHeight="28.0" prefWidth="113.0" style="-fx-background-color: black;" text="Notes" textFill="WHITE">
+            <font>
+                <Font size="14.0" />
+            </font></Button>
+        <Button fx:id="complete_button" layoutX="287.0" layoutY="362.0" mnemonicParsing="false" onAction="#completeButtonAction" prefHeight="28.0" prefWidth="153.0" style="-fx-background-color: black;" text="Done" textFill="WHITE">
+            <font>
+                <Font size="14.0" />
+            </font></Button>
+        <MenuButton fx:id="sort_menubutton" layoutX="14.0" layoutY="27.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: black;" text="Time" textFill="WHITE">
+            <items>
+                <MenuItem mnemonicParsing="false" onAction="#sortMenuItemButtonAction" text="Time" />
+                <MenuItem mnemonicParsing="false" onAction="#sortMenuItemButtonAction" text="Title" />
+                <MenuItem mnemonicParsing="false" onAction="#sortMenuItemButtonAction" text="Location" />
+            </items>
+            <font>
+                <Font size="14.0" />
+            </font>
+        </MenuButton>
+        <MenuButton fx:id="ascdesc_menubutton" layoutX="14.0" layoutY="127.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: black;" text="DESC" textFill="WHITE">
+            <items>
+                <MenuItem mnemonicParsing="false" onAction="#ascdescMenuItemButtonAction" text="ASC" />
+                <MenuItem mnemonicParsing="false" onAction="#ascdescMenuItemButtonAction" text="DESC" />
+            </items>
+            <font>
+                <Font size="14.0" />
+            </font>
+        </MenuButton>
+        <Button fx:id="backHome" layoutX="14.0" layoutY="253.0" mnemonicParsing="false" onAction="#backHome" prefHeight="28.0" prefWidth="101.0" style="-fx-background-color: black;" text="Home" textFill="WHITE">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="del" layoutX="469.0" layoutY="361.0" mnemonicParsing="false" onAction="#Delete" prefHeight="28.0" prefWidth="93.0" style="-fx-background-color: black;" text="Delete" textFill="WHITE" />
+        <Button fx:id="refresh" layoutX="12.0" layoutY="361.0" mnemonicParsing="false" onAction="#Refresh" prefHeight="28.0" prefWidth="93.0" style="-fx-background-color: black;" text="Refresh" textFill="WHITE" />
+    </children>
+
+
+</AnchorPane>

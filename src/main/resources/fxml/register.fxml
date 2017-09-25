@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="318.0" prefWidth="427.0" style="-fx-background-color: #373737;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kmztaskapp.taskappkmz.RegisterController">
+   <children>
+      <JFXTextField fx:id="Username" layoutX="66.0" layoutY="62.0" prefHeight="30.0" prefWidth="297.0" promptText="Username :" style="-fx-background-color: #f4f4f4;" />
+      <JFXPasswordField fx:id="Password" layoutX="66.0" layoutY="129.0" prefHeight="37.0" prefWidth="297.0" promptText="Password :" style="-fx-background-color: #f4f4f4;" />
+      <JFXButton layoutX="232.0" layoutY="204.0" onAction="#reg" prefHeight="30.0" prefWidth="121.0" style="-fx-background-color: #f4f4f4;" text="Register" />
+      <JFXButton layoutX="73.0" layoutY="204.0" onAction="#back" prefHeight="30.0" prefWidth="121.0" style="-fx-background-color: #f4f4f4;" text="Back" />
+   </children>
+</AnchorPane>
