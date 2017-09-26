@@ -15,10 +15,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 /**
@@ -70,12 +75,31 @@ public class InsertController implements Initializable {
                 date_picker.getValue() + " " + hour_value + ":" +
                 minute_menubutton.getText() + ":00" + "');";
 
+
+
         System.out.println("Inserting\n" + query);
         insertStatement(query);
         System.out.println("TASK SAVED!");
 
-     
 
+        Stage stage = new Stage();
+        GridPane grid = new GridPane();
+        grid.setPadding(new Insets( 20,20,20,25));
+        grid.setAlignment(Pos.CENTER);
+        stage.setAlwaysOnTop(true);
+        Label message = new Label();
+        message.setText("Adding task succeed");
+        message.setFont(Font.font("Verdana", 15));
+        grid.add(message, 0,0);
+        Button ok = new Button("Ok");
+
+        HBox bok = new HBox(10);
+        bok.setAlignment(Pos.BOTTOM_CENTER);
+        grid.add(ok, 1, 2);
+        ok.setOnAction(e -> stage.close());
+        Scene scene = new Scene(grid, 250,80);
+        stage.setScene(scene);
+        stage.show();
         Parent date_page_parent = FXMLLoader.load(getClass().getResource("/fxml/Home.fxml"));
         Scene date_page_scene = new Scene(date_page_parent);
         Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
