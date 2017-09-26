@@ -150,7 +150,9 @@ public class LoginController implements Initializable {
 
 
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        btnLogIn.disableProperty().bind(txtUser.textProperty().isEmpty().or(txtPass.textProperty().isEmpty()));
+
+
     }
 
 }

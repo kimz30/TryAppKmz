@@ -8,29 +8,29 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #373737;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kmztaskapp.taskappkmz.HomeController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kmztaskapp.taskappkmz.HomeController">
     <children>
-        <Label alignment="CENTER" layoutX="90.0" layoutY="-17.0" prefHeight="128.0" prefWidth="420.0" text="Task Page" textFill="#e8d9d9">
+        <Label alignment="CENTER" layoutX="90.0" layoutY="-17.0" prefHeight="128.0" prefWidth="420.0" text="Task Page" textFill="#373737">
             <font>
                 <Font size="43.0" />
             </font>
         </Label>
-        <JFXButton fx:id="insertTask" buttonType="RAISED" layoutX="137.0" layoutY="151.0" onAction="#handeInsert" prefHeight="17.0" prefWidth="345.0" style="-fx-background-color: black;" text="Insert Task" textFill="#f4f4f4">
+        <JFXButton fx:id="insertTask" buttonType="RAISED" layoutX="137.0" layoutY="151.0" onAction="#handeInsert" prefHeight="17.0" prefWidth="345.0" style="-fx-background-color: #373737;" text="Insert Task" textFill="#f4f4f4">
             <font>
                 <Font size="18.0" />
             </font>
         </JFXButton>
-        <JFXButton fx:id="viewTask" buttonType="RAISED" layoutX="136.0" layoutY="195.0" onAction="#handleView" prefHeight="17.0" prefWidth="345.0" style="-fx-background-color: black;" text="View Task" textFill="#f4f4f4">
+        <JFXButton fx:id="viewTask" buttonType="RAISED" layoutX="136.0" layoutY="195.0" onAction="#handleView" prefHeight="17.0" prefWidth="345.0" style="-fx-background-color: #373737;" text="View Task" textFill="#f4f4f4">
             <font>
                 <Font size="18.0" />
             </font>
         </JFXButton>
-        <JFXButton fx:id="quit" buttonType="RAISED" layoutX="138.0" layoutY="280.0" onAction="#handeQuit" prefHeight="17.0" prefWidth="345.0" style="-fx-background-color: black;" text="Log Out" textFill="#f4f4f4">
+        <JFXButton fx:id="quit" buttonType="RAISED" layoutX="138.0" layoutY="280.0" onAction="#handeQuit" prefHeight="17.0" prefWidth="345.0" style="-fx-background-color: #373737;" text="Log Out" textFill="#f4f4f4">
             <font>
                 <Font size="18.0" />
             </font>
         </JFXButton>
-        <JFXButton fx:id="Calcu" buttonType="RAISED" layoutX="136.0" layoutY="237.0" onAction="#handleCalcu" prefHeight="17.0" prefWidth="345.0" style="-fx-background-color: black;" text="Calculator" textFill="#f4f4f4">
+        <JFXButton fx:id="Calcu" buttonType="RAISED" layoutX="136.0" layoutY="237.0" onAction="#handleCalcu" prefHeight="17.0" prefWidth="345.0" style="-fx-background-color: #373737;" text="Calculator" textFill="#f4f4f4">
             <font>
                 <Font size="18.0" />
             </font>

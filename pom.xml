@@ -75,7 +75,8 @@
                         </goals>
                         <configuration>
                             <executable>${java.home}/bin/java</executable>
-
+                            <!--whatis this
+                            <commandlineArgs>${runfx.args}</commandlineArgs> -->
                         </configuration>
                     </execution>
                 </executions>  

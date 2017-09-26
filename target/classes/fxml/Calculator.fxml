@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="365.0" prefWidth="329.0" style="-fx-background-color: #373737;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kmztaskapp.taskappkmz.CalcuController">
+<AnchorPane prefHeight="365.0" prefWidth="329.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kmztaskapp.taskappkmz.CalcuController">
     <children>
         <GridPane layoutX="-1.0" layoutY="49.0" prefHeight="289.0" prefWidth="330.0">
             <columnConstraints>
@@ -24,7 +24,7 @@
                 <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <JFXButton fx:id="one" buttonType="RAISED" onAction="#handleAction" prefHeight="68.0" prefWidth="82.0" style="-fx-background-color: 3" text="1" textFill="#f4f4f4">
+                <JFXButton fx:id="one" buttonType="RAISED" onAction="#handleAction" prefHeight="68.0" prefWidth="82.0" style="-fx-background-color: #373737;" text="1" textFill="#f4f4f4">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -111,7 +111,7 @@
                 <Font size="29.0" />
             </font>
         </JFXTextField>
-        <JFXButton fx:id="quit" buttonType="RAISED" layoutX="-2.0" layoutY="339.0" onAction="#quit" prefHeight="25.0" prefWidth="330.0" style="-fx-background-color: #3737373;" text="HOME" textFill="#f4f4f4">
+        <JFXButton fx:id="quit" buttonType="RAISED" layoutX="-2.0" layoutY="339.0" onAction="#quit" prefHeight="25.0" prefWidth="330.0" style="-fx-background-color: #373737;" text="HOME" textFill="#f4f4f4">
             <font>
                 <Font size="15.0" />
             </font>
