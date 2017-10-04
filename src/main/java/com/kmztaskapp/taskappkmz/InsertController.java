@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -25,6 +26,10 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
+
 
 /**
  * FXML Controller class
@@ -32,6 +37,8 @@ import javafx.stage.Stage;
  * @author v-KimM
  */
 public class InsertController implements Initializable {
+
+
     @FXML
     private MenuButton hour_menubutton;
 
@@ -58,6 +65,10 @@ public class InsertController implements Initializable {
     private DatePicker date_picker;
 
 
+
+
+
+
     @FXML
     private void doneButtonAction(ActionEvent event) throws IOException {
 
@@ -68,45 +79,64 @@ public class InsertController implements Initializable {
             System.out.println("They checked PM");
             int int_hour_value = Integer.parseInt(hour_value) + 12;
             hour_value = "" + int_hour_value;
+
+
+            String query = "INSERT INTO task2 (TITLE,LOCATION,NOTES,TIMING) VALUES (" + "'" + title_text.getText() +
+                    "'," + "'" + location_text.getText() + "'," + "'" + notes_text.getText() + "'," + "'" +
+                    date_picker.getValue() + " " + hour_value + ":" +
+                    minute_menubutton.getText() + ":00" + "');";
+
+            try {
+                createNotification();
+
+                System.out.println("Inserting\n" + query);
+                insertStatement(query);
+            } catch (Exception e) {
+                Notifications notifications = Notifications.create()
+                        .title("Task!")
+                        .text("Unsuccessful")
+                        .graphic(null)
+                        .hideAfter(Duration.seconds(3))
+                        .position(Pos.BOTTOM_RIGHT);
+                notifications.darkStyle();
+                notifications.showError();
+                e.printStackTrace();
+
+            }
+
         }
-
-        String query = "INSERT INTO task2 (TITLE,LOCATION,NOTES,TIMING) VALUES (" + "'" + title_text.getText() +
-                "'," + "'" + location_text.getText() + "'," + "'" + notes_text.getText() + "'," + "'" +
-                date_picker.getValue() + " " + hour_value + ":" +
-                minute_menubutton.getText() + ":00" + "');";
-
-
-
-        System.out.println("Inserting\n" + query);
-        insertStatement(query);
-        System.out.println("TASK SAVED!");
-
-
-        Stage stage = new Stage();
-        GridPane grid = new GridPane();
-        grid.setPadding(new Insets( 20,20,20,25));
-        grid.setAlignment(Pos.CENTER);
-        stage.setAlwaysOnTop(true);
-        Label message = new Label();
-        message.setText("Adding task succeed");
-        message.setFont(Font.font("Verdana", 15));
-        grid.add(message, 0,0);
-        Button ok = new Button("Ok");
-
-        HBox bok = new HBox(10);
-        bok.setAlignment(Pos.BOTTOM_CENTER);
-        grid.add(ok, 1, 2);
-        ok.setOnAction(e -> stage.close());
-        Scene scene = new Scene(grid, 250,80);
-        stage.setScene(scene);
-        stage.show();
-        Parent date_page_parent = FXMLLoader.load(getClass().getResource("/fxml/Home.fxml"));
-        Scene date_page_scene = new Scene(date_page_parent);
-        Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        app_stage.hide(); //optional
-        app_stage.setScene(date_page_scene);
-        app_stage.show();
     }
+
+        public void createNotification () {
+
+        Notifications notifications = Notifications.create()
+                    .title("Task!")
+                    .text("New task created successfully")
+                    .graphic(null)
+                 .hideAfter(Duration.seconds(3))
+                    .position(Pos.BOTTOM_RIGHT);
+                    notifications.darkStyle();
+            notifications.showInformation();
+        }
+//
+//        public Notifications text (String text) {
+//            this.text = text;
+//
+//        }
+
+
+
+
+    ////    else {
+//////        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//////        alert.setTitle("Task Status:");
+//////        alert.setContentText("Failed!");
+//////        alert.showAndWait();
+////
+////
+////    }
+//
+//}
     private void insertStatement(String insert_query){
 
         Connection c = null;

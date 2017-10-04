@@ -21,10 +21,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -179,6 +176,13 @@ public class ViewTaskController implements Initializable {
             System.out.println("Deleting index " + delete_index.toString());
             //  deleteTask();
             refreshList();
+
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Task:");
+            alert.setContentText("Task saved to database!");
+            alert.showAndWait();
+
         }
 
         Parent backHome = new FXMLLoader().load(getClass().getResource("/fxml/Home.fxml"));

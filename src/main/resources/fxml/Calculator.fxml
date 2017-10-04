@@ -106,7 +106,7 @@
                 </JFXButton>
             </children>
         </GridPane>
-        <JFXTextField fx:id="display" alignment="CENTER_RIGHT" focusColor="#0f43dd" layoutY="3.0" prefHeight="34.0" prefWidth="330.0" promptText="0" style="-fx-background-color: #f4f4f4;">
+        <JFXTextField fx:id="display" alignment="CENTER_RIGHT" focusColor="#0f43dd" layoutY="3.0" prefHeight="34.0" prefWidth="330.0" style="-fx-background-color: #f4f4f4;">
             <font>
                 <Font size="29.0" />
             </font>

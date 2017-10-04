@@ -10,9 +10,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kmztaskapp.taskappkmz.HomeController">
     <children>
-        <Label alignment="CENTER" layoutX="90.0" layoutY="-17.0" prefHeight="128.0" prefWidth="420.0" text="Task Page" textFill="#373737">
+        <Label alignment="CENTER" layoutX="90.0" layoutY="-17.0" prefHeight="128.0" prefWidth="420.0" styleClass="label-header" stylesheets="@stylee.css" text="Task Page" textFill="#373737">
             <font>
-                <Font size="43.0" />
+                <Font size="42.0" />
             </font>
         </Label>
         <JFXButton fx:id="insertTask" buttonType="RAISED" layoutX="137.0" layoutY="151.0" onAction="#handeInsert" prefHeight="17.0" prefWidth="345.0" style="-fx-background-color: #373737;" text="Insert Task" textFill="#f4f4f4">

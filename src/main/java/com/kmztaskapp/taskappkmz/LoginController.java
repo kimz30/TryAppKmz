@@ -16,6 +16,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -39,19 +41,19 @@ public class LoginController implements Initializable {
     private JFXPasswordField txtPass;
 
     @FXML
-    private JFXButton btnLogIn;
+    private Button Login;
 
-    @FXML
-    private Label lblInvalid;
+//    @FXML
+//    private Label lblInvalid;
     
     @FXML
-    private JFXButton btnReg;
+    private Button sign;
     
    @FXML
-   void handleReg(ActionEvent event ) throws  IOException{
+   void signAction(ActionEvent event ) throws  IOException{
          Parent registered  = FXMLLoader.load(getClass().getResource("/fxml/register.fxml"));
               Scene regiScene = new Scene(registered);
-
+              regiScene.getStylesheets().add("/fxml/stylee.css");
             Stage regi = (Stage) ((Node) event.getSource()).getScene().getWindow();
             regi.setScene(regiScene);
             regi.setTitle("Register");
@@ -60,12 +62,12 @@ public class LoginController implements Initializable {
 
 
     @FXML
-    void handleLogIn(ActionEvent event) throws IOException {
+    void loginAction(ActionEvent event) throws IOException {
 
         Parent home_page = FXMLLoader.load(getClass().getResource("/fxml/Home.fxml"));
         if (isValidCredentials()==true) {
             Scene homeScene = new Scene(home_page);
-
+            homeScene.getStylesheets().add("/fxml/stylee.css");
             Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             homeStage.setScene(homeScene);
             homeStage.setTitle("Home Page");
@@ -74,7 +76,7 @@ public class LoginController implements Initializable {
         } else {
             txtUser.setText("");
             txtPass.setText("");
-            lblInvalid.setText("WRONG CREDENTIALS");
+//            lblInvalid.setText("WRONG CREDENTIALS");
 
         }
     }
@@ -128,6 +130,7 @@ public class LoginController implements Initializable {
             Parent Bahay = FXMLLoader.load(getClass().getResource("/fxml/Home.fxml"));
             if (isValidCredentials()) {
                 Scene EnterKeyHome = new Scene(Bahay);
+                EnterKeyHome.getStylesheets().add("src/main/fxml/stylee.css");
 
                 Stage bahayStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
                 bahayStage.setScene(EnterKeyHome);
@@ -137,9 +140,12 @@ public class LoginController implements Initializable {
 
 
             } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Login Failed");
+                alert.setContentText("Error : wrong credentials");
                 txtUser.setText("");
                 txtPass.setText("");
-                lblInvalid.setText("WRONG CREDENTIALS");
+//                lblInvalid.setText("WRONG CREDENTIALS");
 
             }
         }
@@ -150,7 +156,7 @@ public class LoginController implements Initializable {
 
 
     public void initialize(URL url, ResourceBundle rb) {
-        btnLogIn.disableProperty().bind(txtUser.textProperty().isEmpty().or(txtPass.textProperty().isEmpty()));
+        Login.disableProperty().bind(txtUser.textProperty().isEmpty().or(txtPass.textProperty().isEmpty()));
 
 
     }

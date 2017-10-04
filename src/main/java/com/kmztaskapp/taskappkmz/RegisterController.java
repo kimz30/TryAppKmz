@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -49,18 +50,12 @@ public class RegisterController  implements Initializable {
         pstmt.setString(2, Password.getText());
         pstmt.executeUpdate();
       //  ((Node) (event.getSource())).getScene().getWindow().hide();
-      
-      Stage stage = new Stage();
-      stage.setTitle("Congrats");
-      StackPane layout = new StackPane ();
-      Label lbl = new Label();
-      
-      lbl.setText("Account Registered");
-      layout.getChildren().add(lbl);
-      stage.initModality(Modality.APPLICATION_MODAL);
-      Scene scene = new Scene(layout,300,150);
-      stage.setScene(scene);
-      stage.show();
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Account Registered");
+        alert.setContentText("Account Created.");
+
+        alert.showAndWait();
       
       
         

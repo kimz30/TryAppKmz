@@ -29,11 +29,13 @@ public class HomeController implements Initializable{
     private JFXButton quit;
 
 
+
     @FXML
     void handeInsert(ActionEvent event) throws IOException{
         Parent InsertTask = new FXMLLoader().load(getClass().getResource("/fxml/InsertTask.fxml"));
         Stage InsertStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene InsertScene  = new Scene(InsertTask);
+//        InsertScene.getStylesheets().add("/fxml/stylee.css");
         InsertStage.setResizable(false);
         InsertStage.setScene(InsertScene);
         InsertStage.setTitle("Insert Task");
@@ -45,7 +47,7 @@ public class HomeController implements Initializable{
     void handleView(ActionEvent event) throws IOException{
         Parent ViewTask = new FXMLLoader().load(getClass().getResource("/fxml/ViewTask.fxml"));
         Stage ViewStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene ViewScene = new Scene(ViewTask);
+        Scene ViewScene = new Scene(ViewTask); ViewScene.getStylesheets().add("/fxml/stylee.css");
         ViewStage.setResizable(false);
         ViewStage.setTitle("View  Task");
         ViewStage.setScene(ViewScene);
@@ -57,7 +59,7 @@ public class HomeController implements Initializable{
     void handleCalcu(ActionEvent event) throws  IOException{
         Parent CalcuPage = new FXMLLoader().load(getClass().getResource("/fxml/Calculator.fxml")) ;
         Stage CalcuStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(CalcuPage);
+        Scene scene = new Scene(CalcuPage); scene.getStylesheets().add("/fxml/stylee.css");
         CalcuStage.setScene(scene);
         CalcuStage.setTitle("KMZ Calculator");
         CalcuStage.show();
@@ -70,7 +72,7 @@ public class HomeController implements Initializable{
     void handeQuit(ActionEvent event) throws IOException {
         Parent login = new FXMLLoader().load(getClass().getResource("/fxml/Login.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(login);
+        Scene scene = new Scene(login); scene.getStylesheets().add("/fxml/stylee.css");
         System.out.println("User has Log off");
         stage.setResizable(false);
         

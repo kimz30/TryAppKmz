@@ -1,36 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.paint.*?>
-<?import com.jfoenix.controls.*?>
 <?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kmztaskapp.taskappkmz.LoginController">
+<AnchorPane prefHeight="334.0" prefWidth="319.0" stylesheets="@../../../../../KmzFx/src/view/Darktheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kmztaskapp.taskappkmz.LoginController">
     <children>
-        <Pane layoutX="33.0" layoutY="21.0" prefHeight="255.0" prefWidth="433.0" style="-fx-background-color: #373737;">
-            <children>
-                <JFXTextField fx:id="txtUser" alignment="CENTER" layoutX="70.0" layoutY="83.0" prefHeight="30.0" prefWidth="301.0" promptText="Username :" style="-fx-background-color: #f4f4f4;" unFocusColor="#020221">
-                    <font>
-                        <Font name="Arial Italic" size="15.0" />
-                    </font></JFXTextField>
-                <Label fx:id="lblInvalid" alignment="CENTER" layoutX="140.0" layoutY="225.0" prefHeight="23.0" prefWidth="183.0" textFill="#da0707" />
-                <Label alignment="CENTER" layoutX="52.0" layoutY="-31.0" prefHeight="114.0" prefWidth="328.0" style="-fx-background-image: #373737;" text="Welcome" textFill="#c5dac9">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                </Label>
-                <JFXPasswordField fx:id="txtPass" alignment="CENTER" layoutX="67.0" layoutY="132.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="301.0" promptText="Password :" style="-fx-background-color: #f4f4f4;" unFocusColor="#f4f4f4">
-                    <font>
-                        <Font name="Arial Italic" size="15.0" />
-                    </font>
-                </JFXPasswordField>
-                <JFXButton fx:id="btnLogIn" buttonType="RAISED" layoutX="90.0" layoutY="183.0" onAction="#handleLogIn" onKeyPressed="#handleEnterLogin" prefHeight="23.0" prefWidth="128.0" style="-fx-background-color: black;" text="Log In" />
-            <JFXButton fx:id="btnReg" buttonType="RAISED" layoutX="232.0" layoutY="183.0" onAction="#handleReg" onKeyPressed="#handleEnterLogin" prefHeight="23.0" prefWidth="128.0" style="-fx-background-color: black;" text="Register" />
-            </children>
-        </Pane>
-
+        <JFXTextField fx:id="txtUser" alignment="CENTER" layoutX="41.0" layoutY="63.0" prefHeight="32.0" prefWidth="230.0" promptText="Username" />
+        <JFXPasswordField fx:id="txtPass" alignment="CENTER" layoutX="51.0" layoutY="131.0" prefHeight="32.0" prefWidth="230.0" promptText="Password" />
+        <Button fx:id="Login" layoutX="114.0" layoutY="199.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="33.0" prefWidth="105.0" text="Login" />
+        <Button fx:id="sign" layoutX="114.0" layoutY="247.0" mnemonicParsing="false" onAction="#signAction" prefHeight="33.0" prefWidth="105.0" text="Sign Up" />
+        <Label alignment="CENTER" layoutX="59.0" layoutY="6.0" prefHeight="38.0" prefWidth="211.0" text="Welcome">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
     </children>
-
 </AnchorPane>
